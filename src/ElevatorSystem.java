@@ -11,19 +11,21 @@ public class ElevatorSystem {
         }
     }
 
-    public void pickup(int callingFloor, boolean goUp) {
-        Elevator closestElevator = chooseClosestElevator(callingFloor, goUp);
+    public void pickup(int callingFloor, boolean arrowUp) {
+        Elevator closestElevator = chooseClosestAvailableElevator(callingFloor, arrowUp);
 
+        closestElevator.setDestinationFloor(callingFloor);
+        closestElevator.setIsMoving(true);
     }
 
-    private Elevator chooseClosestElevator(int callingFloor, boolean goUp){
+    private Elevator chooseClosestAvailableElevator(int callingFloor, boolean arrowUp){
         Elevator closestElevator = null;
         int minDistance = Integer.MAX_VALUE;
 
         for (Elevator elevator : systemElevators) {
             int distance = Math.abs(elevator.getCurrentFloor() - callingFloor);
-            boolean couldGoThisDirection = (elevator.isMoving() && goUp && elevator.getDestinationFloor() >= elevator.getCurrentFloor())
-                    || (elevator.isMoving() && !goUp && elevator.getDestinationFloor() <= elevator.getCurrentFloor())
+            boolean couldGoThisDirection = (elevator.isMoving() && arrowUp && elevator.getDestinationFloor() >= elevator.getCurrentFloor())
+                    || (elevator.isMoving() && !arrowUp && elevator.getDestinationFloor() <= elevator.getCurrentFloor())
                     || (!elevator.isMoving());
 
             if (couldGoThisDirection && distance < minDistance) {
@@ -32,5 +34,11 @@ public class ElevatorSystem {
             }
         }
         return closestElevator;
+    }
+
+    public void step() {
+        for (Elevator elevator : systemElevators) {
+            elevator.move();
+        }
     }
 }

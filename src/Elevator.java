@@ -15,29 +15,17 @@ public class Elevator {
         this.destinationFloor = 0;
         this.isMoving = false;
     }
-    public int getElevatorId() {
-        return elevatorId;
-    }
+    public int getElevatorId() {return elevatorId;}
 
-    public int getCurrentFloor() {
-        return currentFloor;
-    }
+    public int getCurrentFloor() {return currentFloor;}
 
-    public int getDestinationFloor() {
-        return destinationFloor;
-    }
+    public int getDestinationFloor() {return destinationFloor;}
 
-    public void setDestinationFloor(int destinationFloor) {
-        this.destinationFloor = destinationFloor;
-    }
+    public void setDestinationFloor(int destinationFloor) {this.destinationFloor = destinationFloor;}
 
-    public boolean isMoving() {
-        return isMoving;
-    }
+    public boolean isMoving() {return isMoving;}
 
-    public void setIsMoving(boolean bool){
-        this.isMoving = bool;
-    }
+    public void setIsMoving(boolean bool) {this.isMoving = bool;}
 
 
     public void move() {
