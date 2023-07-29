@@ -27,6 +27,7 @@ public class ElevatorSystem {
 
     private void assignRequest(Request request){
         Elevator closestElevator = chooseClosestAvailableElevator(request.getCartFloor(), request.isArrowUp());
+        request.setAssignedElevatorId(closestElevator.getElevatorId());
         closestElevator.addRequest(request);
     }
 

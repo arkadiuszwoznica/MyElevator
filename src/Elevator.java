@@ -43,7 +43,6 @@ public class Elevator {
 
     public void addRequest(Request request){
         myRequests.add(request);
-        request.setAssignedElevatorId(this.getElevatorId());
         chooseRequestToProceed();
         updateIsMoving();
     }
