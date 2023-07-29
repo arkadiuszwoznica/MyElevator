@@ -50,26 +50,28 @@ public class Elevator {
 
     private void deleteRequest(Request request){
         this.myRequests.remove(request);
+        updateIsMoving();
     }
 
 
     public void move() {
-        if (currentFloor < currentlyProceedingRequest.getCartFloor()) {
-            currentFloor++;
-        } else if (currentFloor > currentlyProceedingRequest.getCartFloor()) {
-            currentFloor--;
-        }
-        if (isThere()){
-            System.out.print("Request finished!");
-            deleteRequest(currentlyProceedingRequest);
-            chooseRequestToProceed();
+        if(currentlyProceedingRequest != null){
+            if (currentFloor < destinationFloor) {
+                currentFloor++;
+            } else if (currentFloor > destinationFloor) {
+                currentFloor--;
+            }
+            if (isThere()){
+                System.out.print("Request finished!");
+                deleteRequest(currentlyProceedingRequest);
+                chooseRequestToProceed();
+            }
         }
     }
 
     private boolean isThere() {
         return (currentFloor == destinationFloor);
     }
-
 
     @Override
     public String toString() {

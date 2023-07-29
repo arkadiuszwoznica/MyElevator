@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2cf4fb-3fa2-444b-868d-32bebef2c88d" name="Changes" comment="request class added, app rebuilded">
+    <list default="true" id="7d2cf4fb-3fa2-444b-868d-32bebef2c88d" name="Changes" comment="cleaned">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElevatorSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElevatorSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithm" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +71,7 @@
       <workItem from="1690555557983" duration="8453000" />
       <workItem from="1690582685942" duration="21000" />
       <workItem from="1690628737395" duration="590000" />
-      <workItem from="1690629513806" duration="4305000" />
+      <workItem from="1690629513806" duration="5481000" />
     </task>
     <task id="LOCAL-00001" summary="elevator with getters, setters and move">
       <option name="closed" value="true" />
@@ -108,7 +105,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690629896087</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="cleaned and logic fixed">
+      <option name="closed" value="true" />
+      <created>1690635369445</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690635369445</updated>
+    </task>
+    <task id="LOCAL-00006" summary="cleaned">
+      <option name="closed" value="true" />
+      <created>1690635426948</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690635426948</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,23 +132,11 @@
     <MESSAGE value="choosing closest elevator" />
     <MESSAGE value="added step() to system and refactor" />
     <MESSAGE value="request class added, app rebuilded" />
-    <option name="LAST_COMMIT_MESSAGE" value="request class added, app rebuilded" />
+    <MESSAGE value="cleaned and logic fixed" />
+    <MESSAGE value="cleaned" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Elevator.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Elevator.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="request.assignedElevatorId" language="JAVA" />
