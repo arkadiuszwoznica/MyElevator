@@ -3,7 +3,6 @@ import java.util.List;
 
 public class ElevatorSystem {
     public List<Elevator> systemElevators;
-    private List<Request> requests = new ArrayList<>();
 
     public ElevatorSystem(int numElevators) {
         systemElevators = new ArrayList<>();
@@ -22,7 +21,6 @@ public class ElevatorSystem {
 
     public void createRequest(int cartFloor, boolean isArrowUp){
         Request request = new Request(cartFloor, isArrowUp);
-        //requests.add(request);
         assignRequest(request);
     }
 
