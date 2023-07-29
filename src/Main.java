@@ -9,8 +9,9 @@ public class Main {
             System.out.print(elevator.getElevatorId());
         }
 
-        System.out.print(elevatorSystem.getStatus());
+        //System.out.print(elevatorSystem.getStatus());
 
+        elevatorSystem.createRequest(3, true);
         elevatorSystem.createRequest(3, true);
         elevatorSystem.createRequest(3, false);
         elevatorSystem.createRequest(4, true);

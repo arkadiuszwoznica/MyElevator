@@ -16,9 +16,15 @@ public class Elevator {
         this.isMoving = false;
     }
 
-    public int getElevatorId() {return elevatorId;}
-    public int getCurrentFloor() {return currentFloor;}
-    public int getDestinationFloor() {return destinationFloor;}
+    public int getElevatorId() {
+        return elevatorId;
+    }
+    public int getCurrentFloor() {
+        return currentFloor;
+    }
+    public int getDestinationFloor() {
+        return destinationFloor;
+    }
     public boolean isMoving() {
         return isMoving;
     }
@@ -47,11 +53,10 @@ public class Elevator {
         updateIsMoving();
     }
 
-    private void deleteRequest(Request request){
-        this.myRequests.remove(request);
+    private void deleteRequestsForThisFloor(int finishingRequestFloor){
+        myRequests.removeIf(request -> request.getCartFloor() == finishingRequestFloor);
         updateIsMoving();
     }
-
 
     public void move() {
         if(currentlyProceedingRequest != null){
@@ -62,7 +67,7 @@ public class Elevator {
             }
             if (isThere()){
                 System.out.print("Request finished!");
-                deleteRequest(currentlyProceedingRequest);
+                deleteRequestsForThisFloor(currentlyProceedingRequest.getCartFloor());
                 chooseRequestToProceed();
             }
         }
