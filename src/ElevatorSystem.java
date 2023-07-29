@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class ElevatorSystem {
     public List<Elevator> systemElevators;
-//    private List<Request> requests;
+    private List<Request> requests = new ArrayList<>();
 
     public ElevatorSystem(int numElevators) {
         systemElevators = new ArrayList<>();
@@ -21,27 +20,18 @@ public class ElevatorSystem {
         return statuses;
     }
 
-//    public void createRequest(int cartFloor, boolean isArrowUp){
-//        Request request = new Request(cartFloor, isArrowUp);
-//        requests.add(request);
-//        assignRequest(request);
-//    }
-//
-//    public void deleteRequest(Request request){
-//
-//    }
+    public void createRequest(int cartFloor, boolean isArrowUp){
+        Request request = new Request(cartFloor, isArrowUp);
+        //requests.add(request);
+        assignRequest(request);
+    }
+
 
     private void assignRequest(Request request){
         Elevator closestElevator = chooseClosestAvailableElevator(request.getCartFloor(), request.isArrowUp());
-        request.setAssignedElevatorId(closestElevator.getElevatorId());
+        closestElevator.addRequest(request);
     }
 
-//    public void pickup(int callingFloor, boolean arrowUp) {
-//        Elevator closestElevator = chooseClosestAvailableElevator(callingFloor, arrowUp);
-//
-//        closestElevator.setDestinationFloor(callingFloor);
-//        closestElevator.setIsMoving(true);
-//    }
 
     private Elevator chooseClosestAvailableElevator(int callingFloor, boolean arrowUp){
         Elevator closestElevator = null;

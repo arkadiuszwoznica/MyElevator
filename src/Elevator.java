@@ -1,4 +1,3 @@
-import java.io.Console;
 import java.util.List;
 import java.util.ArrayList;
 public class Elevator {
@@ -7,10 +6,8 @@ public class Elevator {
     private int currentFloor;
     private int destinationFloor;
     private boolean isMoving;
-
     private Request currentlyProceedingRequest;
-
-    private List<Request> requests = new ArrayList<>();
+    private List<Request> myRequests = new ArrayList<>();
 
     public Elevator(int elevatorId) {
         this.elevatorId = elevatorId;
@@ -18,32 +15,41 @@ public class Elevator {
         this.destinationFloor = 0;
         this.isMoving = false;
     }
+
     public int getElevatorId() {return elevatorId;}
-
     public int getCurrentFloor() {return currentFloor;}
-
     public int getDestinationFloor() {return destinationFloor;}
-
-    public void setDestinationFloor(int destinationFloor) {this.destinationFloor = destinationFloor;}
-
-    public boolean isMoving() {return isMoving;}
-
-    public void setIsMoving(boolean bool) {this.isMoving = bool;}
+    public boolean isMoving() {
+        return isMoving;
+    }
 
     private void chooseRequestToProceed(){
         Request requestToProceed = null;
         int betweenFloorsDistance = Integer.MAX_VALUE;
-        for (Request request : requests){
+        for (Request request : myRequests){
             int distance = Math.abs(currentFloor - request.getCartFloor());
             if(distance<betweenFloorsDistance){
                 requestToProceed = request;
+                betweenFloorsDistance = distance;
             }
         }
         currentlyProceedingRequest = requestToProceed;
+        this.destinationFloor = requestToProceed != null ? requestToProceed.getCartFloor() : currentFloor;
+    }
+
+    public void updateIsMoving(){
+        this.isMoving =  (currentlyProceedingRequest != null);
+    }
+
+    public void addRequest(Request request){
+        myRequests.add(request);
+        request.setAssignedElevatorId(this.getElevatorId());
+        chooseRequestToProceed();
+        updateIsMoving();
     }
 
     private void deleteRequest(Request request){
-        this.requests.remove(request);
+        this.myRequests.remove(request);
     }
 
 
@@ -54,7 +60,9 @@ public class Elevator {
             currentFloor--;
         }
         if (isThere()){
-            System.out.print("I'm on the right floor to pick up passenger!");
+            System.out.print("Request finished!");
+            deleteRequest(currentlyProceedingRequest);
+            chooseRequestToProceed();
         }
     }
 
@@ -65,10 +73,16 @@ public class Elevator {
 
     @Override
     public String toString() {
+        List<String> requestsStrings = new ArrayList<>();
+        for (Request request : myRequests) {
+            requestsStrings.add(request.toString());
+        }
+
         return "Elevator{" +
                 "elevatorId=" + elevatorId +
                 ", currentFloor=" + currentFloor +
                 ", destinationFloor=" + destinationFloor +
+                "requests" + requestsStrings +
                 '}';
     }
 }

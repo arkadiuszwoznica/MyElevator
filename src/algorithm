@@ -4,6 +4,9 @@
 
 3. obsluga requesta - wyslanie najblizszej windy na odpowiednie pietro
 
-4. nowy request - pasazer wybiera pietro (losowanie pietra)
+4. nowy request - pasazer wybiera pietro
 
 5. obsluga requesta - zawiezienie pasazera
+
+
+request - jest problem przy tworzeniu obiektu, bo przeciez w srodku nie klikam strzalki

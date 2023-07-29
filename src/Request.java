@@ -31,4 +31,12 @@ public class Request {
     public void setAssignedElevatorId(Integer assignedElevatorId) {
         this.assignedElevatorId = assignedElevatorId;
     }
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "cartFloor=" + cartFloor +
+                ", isArrowUp=" + isArrowUp +
+                '}';
+    }
 }

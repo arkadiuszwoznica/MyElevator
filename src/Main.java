@@ -3,14 +3,18 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-
         ElevatorSystem elevatorSystem = new ElevatorSystem(4);
-
 
         for (Elevator elevator : elevatorSystem.systemElevators){
             System.out.print(elevator.getElevatorId());
         }
 
-        //potrzebna jest funkcja w elevator system ktora bedzie tworzyc requesty
+        System.out.print(elevatorSystem.getStatus());
+
+        elevatorSystem.createRequest(3, true);
+        elevatorSystem.createRequest(3, false);
+        elevatorSystem.createRequest(4, true);
+
+        System.out.print(elevatorSystem.getStatus());
     }
 }
