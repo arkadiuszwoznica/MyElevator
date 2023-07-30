@@ -84,11 +84,11 @@ public class Elevator {
             requestsStrings.add(request.toString());
         }
 
-        return "Elevator{" +
+        return "\n Elevator{" +
                 "elevatorId=" + elevatorId +
                 ", currentFloor=" + currentFloor +
                 ", destinationFloor=" + destinationFloor +
-                "requests" + requestsStrings +
+                ", requests" + requestsStrings +
                 '}';
     }
 }
