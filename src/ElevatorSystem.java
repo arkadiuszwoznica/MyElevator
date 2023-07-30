@@ -19,18 +19,15 @@ public class ElevatorSystem {
         return statuses;
     }
 
-    public void createRequest(int cartFloor, boolean isArrowUp){
-        Request request = new Request(cartFloor, isArrowUp);
+    public void createRequest(int callingFloor, boolean isArrowUp){
+        Request request = new Request(callingFloor, isArrowUp);
         assignRequest(request);
     }
 
-
     private void assignRequest(Request request){
-        Elevator closestElevator = chooseClosestAvailableElevator(request.getCartFloor(), request.isArrowUp());
-        request.setAssignedElevatorId(closestElevator.getElevatorId());
+        Elevator closestElevator = chooseClosestAvailableElevator(request.getCallingFloor(), request.isArrowUp());
         closestElevator.addRequest(request);
     }
-
 
     private Elevator chooseClosestAvailableElevator(int callingFloor, boolean arrowUp){
         Elevator closestElevator = null;
