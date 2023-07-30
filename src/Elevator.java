@@ -47,7 +47,7 @@ public class Elevator {
         this.destinationFloor = requestToProceed != null ? requestToProceed.getCallingFloor() : currentFloor;
     }
 
-    public void updateIsMoving(){
+    private void updateIsMoving(){
         this.isMoving =  (currentlyProceedingRequest != null);
     }
 

@@ -7,6 +7,7 @@ public class OutsideRequest extends RequestBase {
             callingFloor = floor;
             isArrowUp = arrow;
         }
+        
         public boolean isArrowUp() {
             return isArrowUp;
         }
