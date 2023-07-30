@@ -11,12 +11,17 @@ public class Main {
         System.out.print(elevatorSystem.getStatus());
         System.out.println();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             elevatorSystem.step();
         }
 
-
+        elevatorSystem.createInsideRequest(5, 1);
         System.out.print(elevatorSystem.getStatus());
 
+        for (int i = 0; i < 3; i++) {
+            elevatorSystem.step();
+        }
+
+        System.out.print(elevatorSystem.getStatus());
     }
 }

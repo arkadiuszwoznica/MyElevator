@@ -3,7 +3,6 @@ import Requests.RequestBase;
 import java.util.List;
 import java.util.ArrayList;
 public class Elevator {
-
     private int elevatorId;
     private int currentFloor;
     private int destinationFloor;
@@ -21,9 +20,15 @@ public class Elevator {
     public int getCurrentFloor() {
         return currentFloor;
     }
+
     public int getDestinationFloor() {
         return destinationFloor;
     }
+
+    public int getElevatorId() {
+        return elevatorId;
+    }
+
     public boolean isMoving() {
         return isMoving;
     }
@@ -65,7 +70,7 @@ public class Elevator {
                 currentFloor--;
             }
             if (isThere()){
-                System.out.print("Request finished!");
+                System.out.print("\nRequest finished!");
                 deleteRequestsForThisFloor(currentlyProceedingRequest.getCallingFloor());
                 chooseRequestToProceed();
             }
