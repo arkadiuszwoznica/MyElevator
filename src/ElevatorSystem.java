@@ -1,3 +1,5 @@
+import Requests.InsideRequest;
+import Requests.OutsideRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,12 +21,12 @@ public class ElevatorSystem {
         return statuses;
     }
 
-    public void createRequest(int callingFloor, boolean isArrowUp){
-        Request request = new Request(callingFloor, isArrowUp);
-        assignRequest(request);
+    public void createOutsideRequest(int callingFloor, boolean isArrowUp){
+        OutsideRequest request = new OutsideRequest(callingFloor, isArrowUp);
+        assignOutsideRequest(request);
     }
 
-    private void assignRequest(Request request){
+    private void assignOutsideRequest(OutsideRequest request){
         Elevator closestElevator = chooseClosestAvailableElevator(request.getCallingFloor(), request.isArrowUp());
         closestElevator.addRequest(request);
     }
@@ -45,6 +47,29 @@ public class ElevatorSystem {
             }
         }
         return closestElevator;
+    }
+
+    public void createInsideRequest(int callingFloor, int elevatorId){
+        InsideRequest insideRequest = new InsideRequest(callingFloor, elevatorId);
+        assignInsideRequest(insideRequest);
+    }
+
+    private void assignInsideRequest(InsideRequest request){
+        Elevator elevatorForRequest = getElevatorFromId(request.getAssignedElevatorId());
+        elevatorForRequest.addRequest(request);
+    }
+
+    private Elevator getElevatorFromId(int id){
+        Elevator elevatorToReturn = null;
+        for (Elevator elevator : systemElevators){
+            if (elevator.getElevatorId() == id){
+                elevatorToReturn = elevator;
+            }
+        }
+        if(elevatorToReturn == null) {
+            throw new NullPointerException();
+        }
+        return elevatorToReturn;
     }
 
     public void step() {

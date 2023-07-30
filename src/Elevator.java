@@ -1,13 +1,14 @@
+import Requests.RequestBase;
+
 import java.util.List;
 import java.util.ArrayList;
 public class Elevator {
-
     private int elevatorId;
     private int currentFloor;
     private int destinationFloor;
     private boolean isMoving;
-    private Request currentlyProceedingRequest;
-    private List<Request> myRequests = new ArrayList<>();
+    private RequestBase currentlyProceedingRequest;
+    private List<RequestBase> myRequests = new ArrayList<>();
 
     public Elevator(int elevatorId) {
         this.elevatorId = elevatorId;
@@ -19,17 +20,23 @@ public class Elevator {
     public int getCurrentFloor() {
         return currentFloor;
     }
+
     public int getDestinationFloor() {
         return destinationFloor;
     }
+
+    public int getElevatorId() {
+        return elevatorId;
+    }
+
     public boolean isMoving() {
         return isMoving;
     }
 
     private void chooseRequestToProceed(){
-        Request requestToProceed = null;
+        RequestBase requestToProceed = null;
         int betweenFloorsDistance = Integer.MAX_VALUE;
-        for (Request request : myRequests){
+        for (RequestBase request : myRequests){
             int distance = Math.abs(currentFloor - request.getCallingFloor());
             if(distance<betweenFloorsDistance){
                 requestToProceed = request;
@@ -40,11 +47,11 @@ public class Elevator {
         this.destinationFloor = requestToProceed != null ? requestToProceed.getCallingFloor() : currentFloor;
     }
 
-    public void updateIsMoving(){
+    private void updateIsMoving(){
         this.isMoving =  (currentlyProceedingRequest != null);
     }
 
-    public void addRequest(Request request){
+    public void addRequest(RequestBase request){
         myRequests.add(request);
         chooseRequestToProceed();
         updateIsMoving();
@@ -63,7 +70,7 @@ public class Elevator {
                 currentFloor--;
             }
             if (isThere()){
-                System.out.print("Request finished!");
+                System.out.print("\nRequest finished!");
                 deleteRequestsForThisFloor(currentlyProceedingRequest.getCallingFloor());
                 chooseRequestToProceed();
             }
@@ -77,7 +84,7 @@ public class Elevator {
     @Override
     public String toString() {
         List<String> requestsStrings = new ArrayList<>();
-        for (Request request : myRequests) {
+        for (RequestBase request : myRequests) {
             requestsStrings.add(request.toString());
         }
 

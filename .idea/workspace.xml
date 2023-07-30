@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d2cf4fb-3fa2-444b-868d-32bebef2c88d" name="Changes" comment="beautified getStatus">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7d2cf4fb-3fa2-444b-868d-32bebef2c88d" name="Changes" comment="inside requests fully working">
       <change beforePath="$PROJECT_DIR$/src/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElevatorSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElevatorSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithm" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Requests/OutsideRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Requests/OutsideRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;requestsAdvanced&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -80,6 +76,7 @@
       <workItem from="1690703192369" duration="358000" />
       <workItem from="1690711224369" duration="130000" />
       <workItem from="1690720553091" duration="521000" />
+      <workItem from="1690742693348" duration="3768000" />
     </task>
     <task id="LOCAL-00001" summary="elevator with getters, setters and move">
       <option name="closed" value="true" />
@@ -161,11 +158,58 @@
       <option name="project" value="LOCAL" />
       <updated>1690703545483</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="created folder for requests">
+      <option name="closed" value="true" />
+      <created>1690721855883</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690721855883</updated>
+    </task>
+    <task id="LOCAL-00012" summary="outside requests fully working">
+      <option name="closed" value="true" />
+      <created>1690743486171</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690743486171</updated>
+    </task>
+    <task id="LOCAL-00013" summary="inside requests fully working">
+      <option name="closed" value="true" />
+      <created>1690747701833</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690747701833</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="development" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="elevator with getters, setters and move" />
@@ -178,7 +222,10 @@
     <MESSAGE value="assigning request refactored" />
     <MESSAGE value="added mechanism of deleting multiple requests" />
     <MESSAGE value="beautified getStatus" />
-    <option name="LAST_COMMIT_MESSAGE" value="beautified getStatus" />
+    <MESSAGE value="created folder for requests" />
+    <MESSAGE value="outside requests fully working" />
+    <MESSAGE value="inside requests fully working" />
+    <option name="LAST_COMMIT_MESSAGE" value="inside requests fully working" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
