@@ -1,3 +1,6 @@
+import Requests.OutsideRequest;
+import Requests.RequestBase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,12 +22,12 @@ public class ElevatorSystem {
         return statuses;
     }
 
-    public void createRequest(int callingFloor, boolean isArrowUp){
-        Request request = new Request(callingFloor, isArrowUp);
+    public void createOutsideRequest(int callingFloor, boolean isArrowUp){
+        OutsideRequest request = new OutsideRequest(callingFloor, isArrowUp);
         assignRequest(request);
     }
 
-    private void assignRequest(Request request){
+    private void assignRequest(OutsideRequest request){
         Elevator closestElevator = chooseClosestAvailableElevator(request.getCallingFloor(), request.isArrowUp());
         closestElevator.addRequest(request);
     }

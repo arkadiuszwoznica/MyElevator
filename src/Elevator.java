@@ -1,3 +1,5 @@
+import Requests.RequestBase;
+
 import java.util.List;
 import java.util.ArrayList;
 public class Elevator {
@@ -6,8 +8,8 @@ public class Elevator {
     private int currentFloor;
     private int destinationFloor;
     private boolean isMoving;
-    private Request currentlyProceedingRequest;
-    private List<Request> myRequests = new ArrayList<>();
+    private RequestBase currentlyProceedingRequest;
+    private List<RequestBase> myRequests = new ArrayList<>();
 
     public Elevator(int elevatorId) {
         this.elevatorId = elevatorId;
@@ -27,9 +29,9 @@ public class Elevator {
     }
 
     private void chooseRequestToProceed(){
-        Request requestToProceed = null;
+        RequestBase requestToProceed = null;
         int betweenFloorsDistance = Integer.MAX_VALUE;
-        for (Request request : myRequests){
+        for (RequestBase request : myRequests){
             int distance = Math.abs(currentFloor - request.getCallingFloor());
             if(distance<betweenFloorsDistance){
                 requestToProceed = request;
@@ -44,7 +46,7 @@ public class Elevator {
         this.isMoving =  (currentlyProceedingRequest != null);
     }
 
-    public void addRequest(Request request){
+    public void addRequest(RequestBase request){
         myRequests.add(request);
         chooseRequestToProceed();
         updateIsMoving();
@@ -77,7 +79,7 @@ public class Elevator {
     @Override
     public String toString() {
         List<String> requestsStrings = new ArrayList<>();
-        for (Request request : myRequests) {
+        for (RequestBase request : myRequests) {
             requestsStrings.add(request.toString());
         }
 
