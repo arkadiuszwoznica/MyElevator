@@ -1,21 +1,22 @@
-import java.util.List;
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        List<Elevator> elevators = new ArrayList<Elevator>();
-
-        System.out.print("Hello and welcome!");
-
-        Elevator elevator0 = new Elevator(1);
-        Elevator elevator1 = new Elevator(2);
-
-        elevators.add(elevator0);
-        elevators.add(elevator1);
+        ElevatorSystem elevatorSystem = new ElevatorSystem(16);
 
 
-        for (Elevator elevator : elevators){
-            System.out.print(elevator.getElevatorId());
+        elevatorSystem.createRequest(4, true);
+        elevatorSystem.createRequest(3, true);
+        elevatorSystem.createRequest(3, false);
+
+
+        System.out.print(elevatorSystem.getStatus());
+        System.out.println();
+
+        for (int i = 0; i < 5; i++) {
+            elevatorSystem.step();
         }
+
+
+        System.out.print(elevatorSystem.getStatus());
+
     }
 }
