@@ -1,9 +1,0 @@
-1. wezwanie windy na konkretne pietro z okresleniem kierunku
-
-2. wybranie najblizszej windy + stworzenie requesta
-
-3. obsluga requesta - wyslanie najblizszej windy na odpowiednie pietro
-
-4. nowy request - pasazer wybiera pietro
-
-5. obsluga requesta - zawiezienie pasazera
