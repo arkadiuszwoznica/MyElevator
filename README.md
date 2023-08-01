@@ -49,12 +49,17 @@ This class is for simulating requests to elevators. You can recreate it as you w
 
 ### Class 2: ElevatorSystem
 
-This class is holding most of the application logic. System has a list of its elevators, method for returning statuses of all elevators and methods for creating both outside and inside requests.
+This class is holding most of the application logic. System has a list of its elevators, method for returning statuses of all elevators and methods for creating both outside and inside requests, which are correlated with updating each elevator.
+
+The method for returning statuses is returning string representations for all elevators, including their requests. It's giving the administrator clear inside for current status of all elevators.
+
+I divided requests for outside and inside ones, because it is not the same thing from the elevator point of view. You can learn more about it in the description of requests classes.
 
 To create outside request, system first checks which elevator is the closest one and could take the passenger. It assumes elevator can take passenger if is currently not moving or is moving in the same way the passenger wants to go, what is based on arrowUp property. After that, system is assigning request to chosen elevator.
 
-To create inside request logic is similar, but instead of choosing the closest elevator system takes elevator with given id. This is because inside request is given always inside concrete elevator and only this elevator could handle it. 
+To create inside request logic is similar, but instead of choosing the closest elevator system takes elevator with given id. This is because inside request is given always inside specific elevator and only this elevator could handle it. 
 
+Additionally, there is a step() function, which is making one step of simulation.
 ### Class 3: Elevator
 
 Class elevator is class which represents single elevator and its properties such as id, current and destination floor, currently proceeding move, list of assigned requests and isMoving property. 
@@ -67,13 +72,13 @@ Package contains three classes with concept of inheritance. Adding this mechanis
 
 #### Class 4: Request Base 
 
-This is an abstract class which contains same property for both inside and outside request which is calling floor. It doesn't contain constructor, because you can't make request without specifying if it is inside or outside.
+This is an abstract class which contains same property for both inside and outside request which is calling floor. It doesn't contain constructor, because you can't make request without specifying if it is inside or outside one.
 
 #### Class 5: OutsideRequest
 
-This is class extending RequestBase with property isArrowUp. It's simulation of two types of calling elevator (to go up or down) and allows system to deal with them properly.
+This is class extending RequestBase with property isArrowUp. It's simulation of two types of calling elevator (to go up or down) normally executed when passenger is clicking arrow up or arrow down button standing in front of elevator.
 
 #### Class 6: InsideRequest
 
-This is class extending RequestBase with property assignedElevatorId. This is because inside requests are always made from the concrete elevator and to simulate it we need to provide its id for allowing system to deal with these requests properly.
+This is class extending RequestBase with property assignedElevatorId. This is because inside requests are always made from the specific elevator and to simulate it we need to provide its id for allowing system to deal with these requests properly.
 
